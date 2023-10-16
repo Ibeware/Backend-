@@ -1,0 +1,10 @@
+¿Qué es NodeJS?
+Es un entorno que trabaja en tiempo de ejecucion de codigo abierto, multi-plataforma que permite a los desarrolladores crear 
+toda clase de herramientas de lado del servidor y apps en Javascrit
+
+¿Es NodeJS un lenguaje de programación?
+No, es un inteprete. Es un motor que se encarga de copilar el codigo Javascript
+
+¿Puedo tener acceso al DOM desde NodeJS?, ¿Por qué?
+No, no puedes acceder al DOM desde Node.js, ya que Node.js se ejecuta en el servidor y no en un navegador web.
+El DOM solo está disponible en el contexto del navegador web

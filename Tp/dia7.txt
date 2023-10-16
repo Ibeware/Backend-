@@ -1,0 +1,3 @@
+¿Por qué tengo que probar mi código?
+las pruebas son una práctica esencial en el desarrollo de software que ayuda a garantizar la calidad,
+ la estabilidad y la confiabilidad de tu código, y a evitar errores costosos y problemas en producción.

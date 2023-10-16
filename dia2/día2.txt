@@ -1,0 +1,4 @@
+¿Qué diferencia existe en instalar una dependecia agregando -dev?
+
+Al instalar una dependecia con-dev, estas comunicando que esa dependencia es para uso interno del equipo
+de desarrollo y no es esencial para el funcionamiento de la aplicación o proyecto de producción

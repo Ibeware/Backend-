@@ -1,0 +1,40 @@
+-- Define la tabla PERFILES
+CREATE TABLE "PERFILES" (
+    "id" SERIAL PRIMARY KEY,
+    "nombre" VARCHAR(255) NOT NULL
+);
+
+-- Define la tabla PERMISOS
+CREATE TABLE "PERMISOS" (
+    "id" SERIAL PRIMARY KEY,
+);
+
+-- Define la tabla PERMISOS_PERFIL con las claves foráneas
+CREATE TABLE "PERMISOS_PERFIL" (
+    "id" SERIAL PRIMARY KEY,
+    "id_permisos" INTEGER NOT NULL,
+    "id_perfil" INTEGER NOT NULL,
+    FOREIGN KEY ("id_permisos") REFERENCES "PERMISOS" ("id"),
+    FOREIGN KEY ("id_perfil") REFERENCES "PERFILES" ("id")
+);
+
+-- Define la tabla USUARIOS
+CREATE TABLE "USUARIOS" (
+    "id" SERIAL PRIMARY KEY,
+    "name" VARCHAR(255) NOT NULL,
+    "password" VARCHAR(255) NOT NULL,
+    "id_perfil" INTEGER NOT NULL
+);
+
+-- Define la tabla TAREAS_REALIZAR
+CREATE TABLE "TAREAS_REALIZAR" (
+    "id" SERIAL PRIMARY KEY,
+    "fecha" DATE NOT NULL,
+    "nombre" VARCHAR(255) NOT NULL,
+    "direccion" VARCHAR(255) NOT NULL
+);
+
+-- Restricciones de clave foránea para TAREAS_REALIZAR
+ALTER TABLE "TAREAS_REALIZAR" ADD CONSTRAINT "tarea_id_usuario_baja_foreign" FOREIGN KEY ("id_usuario_baja") REFERENCES "USUARIOS" ("id");
+ALTER TABLE "TAREAS_REALIZAR" ADD CONSTRAINT "tarea_id_usuario_modificacion_foreign" FOREIGN KEY ("id_usuario_modificacion") REFERENCES "USUARIOS" ("id");
+ALTER TABLE "TAREAS_REALIZAR" ADD CONSTRAINT "tarea_id_usuario_alta_foreign" FOREIGN KEY ("id_usuario_alta") REFERENCES "USUARIOS" ("id");
